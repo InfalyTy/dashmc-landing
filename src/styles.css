@@ -1,61 +1,55 @@
-/* Animaciones */
-.fade-in {
-  animation: fadeIn 1s ease forwards;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.slide-up {
-  animation: slideUp 0.8s ease forwards;
+html, body {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(180deg, #0b0f1a, #05070d);
+  color: #ffffff;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+#root {
+  min-height: 100vh;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
 }
 
-/* IP copiable */
-.ip-box {
-  margin: 2rem auto 1rem;
-  padding: 1rem 2rem;
-  background: rgba(255,255,255,0.15);
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-block;
-  transition: transform 0.2s, background 0.2s;
+.hero {
+  text-align: center;
+  padding: 6rem 1rem;
 }
 
-.ip-box:hover {
-  transform: scale(1.05);
-  background: rgba(255,255,255,0.25);
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4fc3ff;
 }
 
-.ip-box span {
-  font-weight: 700;
+.hero p {
+  margin-top: 1rem;
   font-size: 1.2rem;
-}
-
-.ip-box small {
-  display: block;
-  margin-top: 0.3rem;
-  font-size: 0.85rem;
   opacity: 0.8;
 }
 
-.players {
-  margin-top: 1rem;
-  font-weight: 600;
+.ip-box {
+  margin-top: 2rem;
+  background: #11162a;
+  border: 1px solid #1e2a52;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.ip-box:hover {
+  background: #16204a;
+  transform: scale(1.05);
 }
