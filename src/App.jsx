@@ -1,60 +1,41 @@
-import { useEffect, useState } from "react";
-
 export default function App() {
-  const SERVER_IP = "mc.dashmc.net";
-  const [copied, setCopied] = useState(false);
-  const [players, setPlayers] = useState(null);
-
-  // Copiar IP
-  const copyIP = async () => {
-    await navigator.clipboard.writeText(SERVER_IP);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  // Obtener jugadores online
-  useEffect(() => {
-    fetch("https://api.mcstatus.io/v2/status/java/mc.dashmc.net")
-      .then(res => res.json())
-      .then(data => {
-        setPlayers(data.players.online);
-      })
-      .catch(() => setPlayers("?"));
-  }, []);
+  const copyIP = () => {
+    navigator.clipboard.writeText("mc.dashmc.net")
+    alert("IP copiada al portapapeles")
+  }
 
   return (
-    <div className="app">
-      <header className="hero fade-in">
+    <>
+      <header className="hero">
         <h1>DashMC Network</h1>
-        <p>BoxPvP · Eventos · PvP competitivo</p>
+        <p>Servidor Minecraft • BoxPvP • Network</p>
 
         <div className="ip-box" onClick={copyIP}>
-          <span>{SERVER_IP}</span>
-          <small>{copied ? "¡IP copiada!" : "Click para copiar"}</small>
-        </div>
-
-        <div className="players">
-          👥 {players !== null ? `${players} jugadores online` : "Cargando..."}
+          mc.dashmc.net
+          <span>CLICK TO COPY</span>
         </div>
       </header>
 
-      <section className="section slide-up">
-        <h2>¿Qué es DashMC?</h2>
-        <p>
-          Una network de Minecraft centrada en BoxPvP con sistemas personalizados,
-          rendimiento optimizado y una comunidad activa.
-        </p>
+      <section className="stats">
+        <div className="stat">
+          <h2>ONLINE</h2>
+          <p>123</p>
+        </div>
+
+        <div className="stat">
+          <h2>MODO</h2>
+          <p>BoxPvP</p>
+        </div>
+
+        <div className="stat">
+          <h2>VERSION</h2>
+          <p>1.20.4</p>
+        </div>
       </section>
 
-      <section className="section cards slide-up">
-        <div className="card">⚔ BoxPvP competitivo</div>
-        <div className="card">🎁 Eventos frecuentes</div>
-        <div className="card">🚀 Alto rendimiento</div>
-      </section>
-
-      <footer className="footer fade-in">
-        © 2025 DashMC Network — No afiliado con Mojang
+      <footer>
+        © DashMC Network
       </footer>
-    </div>
-  );
+    </>
+  )
 }
