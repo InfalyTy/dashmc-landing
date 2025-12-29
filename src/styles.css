@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: #0b0f1a;
+  color: #ffffff;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #0a3cff, #00b4ff);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero p {
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary {
+  background: #ffffff;
+  color: #000;
+}
+
+.secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: #11162a;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
