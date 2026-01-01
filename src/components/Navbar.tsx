@@ -5,19 +5,19 @@ import { toast } from "sonner";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const serverIP = "play.dashmc.net";
+  const serverIP = "mc.minedashn.net";
 
   const copyIP = () => {
     navigator.clipboard.writeText(serverIP);
-    toast.success("Server IP copied to clipboard!");
+    toast.success("¡IP del servidor copiada!");
   };
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Game Modes", href: "#modes" },
-    { name: "Store", href: "#" },
+    { name: "Inicio", href: "#" },
+    { name: "Modos de Juego", href: "#modes" },
+    { name: "Tienda", href: "#" },
     { name: "Discord", href: "#" },
-    { name: "Vote", href: "#" },
+    { name: "Votar", href: "#" },
   ];
 
   return (
@@ -52,7 +52,7 @@ const Navbar = () => {
               <Copy className="w-4 h-4" />
             </button>
             <Button variant="glow" size="sm">
-              Play Now
+              Jugar Ahora
             </Button>
           </div>
 
@@ -81,7 +81,7 @@ const Navbar = () => {
               ))}
               <div className="pt-4 border-t border-border">
                 <Button variant="hero" className="w-full" onClick={copyIP}>
-                  Copy IP & Play
+                  Copiar IP y Jugar
                 </Button>
               </div>
             </div>

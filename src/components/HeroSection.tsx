@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { Copy, Users, Gamepad2 } from "lucide-react";
+import { Copy, Users, Gamepad2, Wifi, WifiOff, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useServerStatus } from "@/hooks/useServerStatus";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
-  const serverIP = "play.dashmc.net";
+  const serverIP = "mc.minedashn.net";
+  const { online, players, isLoading, version } = useServerStatus(serverIP);
 
   const copyIP = () => {
     navigator.clipboard.writeText(serverIP);
-    toast.success("Server IP copied to clipboard!");
+    toast.success("¡IP del servidor copiada!");
   };
 
   return (
@@ -41,8 +43,37 @@ const HeroSection = () => {
             NETWORK
           </p>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            Experience Minecraft like never before. Join thousands of players in epic adventures across unique game modes.
+            Vive Minecraft como nunca antes. Únete a miles de jugadores en épicas aventuras a través de modos de juego únicos.
           </p>
+
+          {/* Server Status Badge */}
+          <div className="flex justify-center mb-6">
+            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${
+              isLoading 
+                ? "bg-muted/50 border-muted-foreground/30" 
+                : online 
+                  ? "bg-green-500/10 border-green-500/30" 
+                  : "bg-red-500/10 border-red-500/30"
+            }`}>
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">Verificando estado...</span>
+                </>
+              ) : online ? (
+                <>
+                  <Wifi className="w-4 h-4 text-green-500" />
+                  <span className="text-sm text-green-400">Servidor en línea</span>
+                  {version && <span className="text-xs text-muted-foreground">• {version}</span>}
+                </>
+              ) : (
+                <>
+                  <WifiOff className="w-4 h-4 text-red-500" />
+                  <span className="text-sm text-red-400">Servidor fuera de línea</span>
+                </>
+              )}
+            </div>
+          </div>
 
           {/* Server IP */}
           <div 
@@ -57,7 +88,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button variant="hero" size="xl" onClick={copyIP}>
               <Gamepad2 className="w-6 h-6" />
-              Play Now
+              Jugar Ahora
             </Button>
             <Button variant="heroOutline" size="xl">
               <Users className="w-6 h-6" />
@@ -68,12 +99,16 @@ const HeroSection = () => {
           {/* Quick Stats */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             <div className="text-center">
-              <p className="font-pixel text-4xl md:text-5xl text-primary text-glow">1,247</p>
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">Players Online</p>
+              <p className="font-pixel text-4xl md:text-5xl text-primary text-glow">
+                {isLoading ? "..." : players.online}
+              </p>
+              <p className="text-muted-foreground text-sm uppercase tracking-wider">Jugadores Conectados</p>
             </div>
             <div className="text-center">
-              <p className="font-pixel text-4xl md:text-5xl text-foreground">50K+</p>
-              <p className="text-muted-foreground text-sm uppercase tracking-wider">Total Players</p>
+              <p className="font-pixel text-4xl md:text-5xl text-foreground">
+                {isLoading ? "..." : players.max}
+              </p>
+              <p className="text-muted-foreground text-sm uppercase tracking-wider">Capacidad Máxima</p>
             </div>
             <div className="text-center">
               <p className="font-pixel text-4xl md:text-5xl text-foreground">99.9%</p>

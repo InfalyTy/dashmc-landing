@@ -3,33 +3,33 @@ import { Sword, Castle, Users, Trophy, Shield, Zap } from "lucide-react";
 const features = [
   {
     icon: Sword,
-    title: "Survival",
-    description: "Classic survival experience with custom enchants, McMMO skills, and land claiming.",
+    title: "Supervivencia",
+    description: "Experiencia de supervivencia clásica con encantamientos personalizados, habilidades McMMO y protección de terrenos.",
   },
   {
     icon: Castle,
-    title: "Factions",
-    description: "Build your empire, wage war against enemies, and dominate the leaderboards.",
+    title: "Facciones",
+    description: "Construye tu imperio, declara la guerra a tus enemigos y domina las clasificaciones.",
   },
   {
     icon: Users,
     title: "Skyblock",
-    description: "Start on a floating island and expand your world with friends.",
+    description: "Comienza en una isla flotante y expande tu mundo junto a tus amigos.",
   },
   {
     icon: Trophy,
-    title: "Minigames",
-    description: "Battle it out in BedWars, SkyWars, and weekly rotating game modes.",
+    title: "Minijuegos",
+    description: "Compite en BedWars, SkyWars y modos de juego rotativos semanales.",
   },
   {
     icon: Shield,
     title: "Anti-Cheat",
-    description: "Advanced protection systems ensure fair play for everyone.",
+    description: "Sistemas de protección avanzados que aseguran el juego limpio para todos.",
   },
   {
     icon: Zap,
-    title: "Low Latency",
-    description: "Premium hardware with worldwide node distribution for smooth gameplay.",
+    title: "Baja Latencia",
+    description: "Hardware premium con distribución de nodos mundial para una experiencia fluida.",
   },
 ];
 
@@ -40,10 +40,10 @@ const FeaturesSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-pixel text-4xl md:text-5xl text-foreground mb-4">
-            GAME <span className="text-primary text-glow">MODES</span>
+            MODOS DE <span className="text-primary text-glow">JUEGO</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Choose your adventure from our diverse selection of game modes, each with unique features and communities.
+            Elige tu aventura de nuestra diversa selección de modos de juego, cada uno con características y comunidades únicas.
           </p>
         </div>
 

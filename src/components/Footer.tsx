@@ -5,22 +5,22 @@ const Footer = () => {
 
   const links = {
     play: [
-      { name: "How to Join", href: "#" },
-      { name: "Server Rules", href: "#" },
-      { name: "Vote for Us", href: "#" },
-      { name: "Server Status", href: "#" },
+      { name: "Cómo Unirse", href: "#" },
+      { name: "Reglas del Servidor", href: "#" },
+      { name: "Vota por Nosotros", href: "#" },
+      { name: "Estado del Servidor", href: "#" },
     ],
     community: [
       { name: "Discord", href: "#" },
-      { name: "Forums", href: "#" },
-      { name: "Apply for Staff", href: "#" },
-      { name: "Report a Player", href: "#" },
+      { name: "Foros", href: "#" },
+      { name: "Aplicar para Staff", href: "#" },
+      { name: "Reportar Jugador", href: "#" },
     ],
     support: [
-      { name: "Store", href: "#" },
-      { name: "Support Tickets", href: "#" },
-      { name: "Refund Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
+      { name: "Tienda", href: "#" },
+      { name: "Tickets de Soporte", href: "#" },
+      { name: "Política de Reembolso", href: "#" },
+      { name: "Términos de Servicio", href: "#" },
     ],
   };
 
@@ -28,7 +28,7 @@ const Footer = () => {
     { icon: MessageCircle, href: "#", label: "Discord" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: ShoppingBag, href: "#", label: "Store" },
+    { icon: ShoppingBag, href: "#", label: "Tienda" },
   ];
 
   return (
@@ -41,7 +41,7 @@ const Footer = () => {
               <span className="text-primary">DASH</span>MC
             </h3>
             <p className="text-muted-foreground mb-4 max-w-sm">
-              The ultimate Minecraft server experience. Join our growing community and explore endless adventures.
+              La experiencia definitiva de servidor Minecraft. Únete a nuestra comunidad en crecimiento y explora aventuras sin fin.
             </p>
             <div className="flex gap-3">
               {socials.map((social) => (
@@ -59,7 +59,7 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-pixel text-lg text-foreground mb-4">PLAY</h4>
+            <h4 className="font-pixel text-lg text-foreground mb-4">JUGAR</h4>
             <ul className="space-y-2">
               {links.play.map((link) => (
                 <li key={link.name}>
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-pixel text-lg text-foreground mb-4">COMMUNITY</h4>
+            <h4 className="font-pixel text-lg text-foreground mb-4">COMUNIDAD</h4>
             <ul className="space-y-2">
               {links.community.map((link) => (
                 <li key={link.name}>
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-pixel text-lg text-foreground mb-4">SUPPORT</h4>
+            <h4 className="font-pixel text-lg text-foreground mb-4">SOPORTE</h4>
             <ul className="space-y-2">
               {links.support.map((link) => (
                 <li key={link.name}>
@@ -101,10 +101,10 @@ const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} DashMC Network. Not affiliated with Mojang Studios.
+            © {currentYear} DashMC Network. No afiliado con Mojang Studios.
           </p>
           <p className="text-muted-foreground text-sm">
-            Minecraft Java Edition 1.20.x • play.dashmc.net
+            Minecraft Java Edition 1.20.x • mc.minedashn.net
           </p>
         </div>
       </div>
