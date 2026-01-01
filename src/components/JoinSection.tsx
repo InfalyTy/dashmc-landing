@@ -5,32 +5,32 @@ import { toast } from "sonner";
 const steps = [
   {
     number: "01",
-    title: "Launch Minecraft",
-    description: "Open Minecraft Java Edition 1.20.x",
+    title: "Abre Minecraft",
+    description: "Inicia Minecraft Java Edition 1.20.x",
   },
   {
     number: "02",
-    title: "Add Server",
-    description: "Go to Multiplayer → Add Server",
+    title: "Añade Servidor",
+    description: "Ve a Multijugador → Añadir Servidor",
   },
   {
     number: "03",
-    title: "Enter IP",
-    description: "Type play.dashmc.net and click Done",
+    title: "Ingresa la IP",
+    description: "Escribe mc.minedashn.net y haz clic en Listo",
   },
   {
     number: "04",
-    title: "Join & Play",
-    description: "Double-click the server to start playing!",
+    title: "¡Juega!",
+    description: "Haz doble clic en el servidor para empezar a jugar",
   },
 ];
 
 const JoinSection = () => {
-  const serverIP = "play.dashmc.net";
+  const serverIP = "mc.minedashn.net";
 
   const copyIP = () => {
     navigator.clipboard.writeText(serverIP);
-    toast.success("Server IP copied to clipboard!");
+    toast.success("¡IP del servidor copiada!");
   };
 
   return (
@@ -42,10 +42,10 @@ const JoinSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-pixel text-4xl md:text-5xl text-foreground mb-4">
-            HOW TO <span className="text-primary text-glow">JOIN</span>
+            CÓMO <span className="text-primary text-glow">UNIRSE</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Getting started is easy. Follow these simple steps to join thousands of players on DashMC Network.
+            Empezar es fácil. Sigue estos simples pasos para unirte a miles de jugadores en DashMC Network.
           </p>
         </div>
 
@@ -74,9 +74,9 @@ const JoinSection = () => {
 
         {/* CTA Box */}
         <div className="max-w-2xl mx-auto gradient-card border border-primary/30 rounded-2xl p-8 text-center box-glow">
-          <h3 className="font-pixel text-3xl text-foreground mb-4">Ready to Play?</h3>
+          <h3 className="font-pixel text-3xl text-foreground mb-4">¿Listo para Jugar?</h3>
           <p className="text-muted-foreground mb-6">
-            Copy our server IP and jump straight into the action!
+            ¡Copia nuestra IP del servidor y entra directo a la acción!
           </p>
           
           <div 
@@ -89,11 +89,11 @@ const JoinSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" onClick={copyIP}>
-              Copy Server IP
+              Copiar IP del Servidor
             </Button>
             <Button variant="heroOutline" size="lg">
               <ExternalLink className="w-5 h-5" />
-              View Store
+              Ver Tienda
             </Button>
           </div>
         </div>
